@@ -59,4 +59,4 @@ void toggleState(string deviceIP){
     http.end();
 }
 ```
- 
+ ***if ip address of WeMo Light Switch is not known, use the MAC adres printed on the back of the switch in conjunction with ```arp -a``` in terminal to find the corresponding ip address***
