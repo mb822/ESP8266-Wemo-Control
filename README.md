@@ -5,10 +5,10 @@ Working implmentation of [ESP8266HTTPClient](https://github.com/esp8266/Arduino/
 
 
 Steps: 
- - 1.) Add librarys in Arduino (Sketch -> Include Library -> Add .ZIP Library...)
+ - 1.) Add libraries in Arduino (Sketch -> Include Library -> Add .ZIP Library...)
  - 2.) Create new sketch
- - 3.) Include libraries in stetch<br/>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```cpp
+ - 3.) Include libraries in sketch<br/>
+ ```cpp
  #include <ESP8266WiFi.h>
  #include <ESP8266HTTPClient.h>
  ```
@@ -24,8 +24,8 @@ Steps:
      }
  }
  ```
- &nbsp;&nbsp;&nbsp;&nbsp;***(where 'ssid' and 'passowrd' are replaced with that of your network)***
- - 4.) use the folloing functions to get and control the state of your WeMo Light Switch
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***(where 'ssid' and 'password' are replaced with that of your network)***
+ - 4.) use the following functions to get and control the state of your WeMo Light Switch
 
   ...
  
