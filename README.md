@@ -16,14 +16,15 @@ Steps:
  - 4.) Connect to WiFi in setup
  ```cpp
  void setup{
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-   delay(500);
-   Serial.print(".");
-  }
+     WiFi.mode(WIFI_STA);
+     WiFi.begin(ssid, password);
+     while (WiFi.status() != WL_CONNECTED) {
+         delay(500);
+         Serial.print(".");
+     }
  }
  ```
+ (where 'ssid' and 'passowrd' are replaced with that of your network)
  - 4.) use the folloing functions to get and control the state of your WeMo Light Switch
 
   ...
