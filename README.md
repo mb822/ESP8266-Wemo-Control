@@ -9,10 +9,21 @@ Steps:
  - 2.) Create new sketch
  - 3.) Include librarys in stetch<br/>
  ```cpp
- #include <ESP8266WiFi.h>```<br/>```#include <ESP8266HTTPClient.h>
+ #include <ESP8266WiFi.h>
+ #include <ESP8266HTTPClient.h>
  ```
  
- - 4.) Connect to WiFi in setup<br>```void setup {```<br/>    ```Serial.begin(115200)```<br/>    ```Serial.print("connecting to wifi");```<br/>    ```    WiFi.mode(WIFI_STA);```<br/>        ```WiFi.begin(ssid, password);```<br/>        ```while (WiFi.status() != WL_CONNECTED) {```<br/>        ```delay(500);```<br/>        ```Serial.print(".");```<br/>```    }```<br/>```}```
+ - 4.) Connect to WiFi in setup
+ ```cpp
+ void setup{
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+   delay(500);
+   Serial.print(".");
+  }
+ }
+ ```
  - 4.) use the folloing functions to get and control the state of your WeMo Light Switch
 
   ...
