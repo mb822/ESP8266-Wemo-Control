@@ -31,7 +31,6 @@ int getState(string deviceIP){
     http.addHeader("Accept-Encoding", "identity");
     http.addHeader("Content-Length", "306");
     http.addHeader("Content-Type", "text/xml");
-    http.addHeader("Content-Type", "text/xml");
     http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#GetBinaryState\"");
     http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"><s:Body><u:GetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"></u:GetBinaryState></s:Body></s:Envelope>");
     return http.getString().substring(216,217).toInt();
