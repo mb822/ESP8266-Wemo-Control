@@ -50,7 +50,7 @@ void setState(string deviceIP, int state){
 }
 ```
 ```cpp
-void toggle(string deviceIP){
+void toggleState(string deviceIP){
     HTTPClient http;
     http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
     http.addHeader("Content-Type", "text/xml");
