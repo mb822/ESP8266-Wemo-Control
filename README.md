@@ -24,7 +24,7 @@ Steps:
      }
  }
  ```
- &nsbp;&nsbp;&nsbp;&nsbp;***(where 'ssid' and 'passowrd' are replaced with that of your network)***
+ &nbsp;&nbsp;&nbsp;&nbsp;***(where 'ssid' and 'passowrd' are replaced with that of your network)***
  - 4.) use the folloing functions to get and control the state of your WeMo Light Switch
 
   ...
