@@ -57,4 +57,4 @@ void toggleState(string deviceIP){
 }
 ```
 
-*** Note: if device ip address is unknown, you can run [find_wemo_ip.py](https://github.com/mb822/esp8266WemoExample/blob/main/find_wemo_ip.py) to find it ***
+***Note: if device ip address is unknown, you can run [find_wemo_ip.py](https://github.com/mb822/esp8266WemoExample/blob/main/find_wemo_ip.py) to find it***
