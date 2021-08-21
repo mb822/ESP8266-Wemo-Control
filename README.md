@@ -64,4 +64,4 @@ void toggleState(string deviceIP){
 
 Sample Use:
   Wireless WeMo Light Switch Remote
-  https://raw.githubusercontent.com/mb822/esp8266WemoExample/main/esp8266_wemo_remote_drawing.png
+  ![Screenshot](https://raw.githubusercontent.com/mb822/esp8266WemoExample/main/esp8266_wemo_remote_drawing.png)
