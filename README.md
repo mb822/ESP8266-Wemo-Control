@@ -58,3 +58,10 @@ void toggleState(string deviceIP){
 ```
 
 ***Note: if device ip address is unknown, you can run [find_wemo_ip.py](https://github.com/mb822/esp8266WemoExample/blob/main/find_wemo_ip.py) to find it***
+
+
+
+
+Sample Use:
+  Wireless WeMo Light Switch Remote
+  https://raw.githubusercontent.com/mb822/esp8266WemoExample/main/esp8266_wemo_remote_drawing.png
