@@ -1,9 +1,6 @@
 import pywemo
 import time
 
-yes = "yes"
-no = "no"
-
 print("discovering devices...")
 devices = pywemo.discover_devices()
 
@@ -13,9 +10,10 @@ print("------------------------------")
 for device in devices:
     device.toggle()
 
+    answer = input("did your target device change state?\n ")
     
-    if input("did your target device change state?\n ") == ("yes" or "YES" or "Yes" or "Y" or "y" or "1" or 1):
-        print("\n--------------------IP ADDRESS of device: " + str(device.host))
+    if answer.lower() == "yes" or answer == 1 or answer.lower() == "maybe":
+        print("--------------------\nIP ADDRESS OF DEVICE: " + str(device.host))
         exit()
     
 print("no other WeMo devices found on current network")
