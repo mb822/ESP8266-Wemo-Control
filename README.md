@@ -25,7 +25,7 @@ Steps:
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***(where 'ssid' and 'password' are replaced with that of your network)***
  - 4.) use the following functions to get and control the state of your WeMo Light Switch
 ```cpp
-int getState(string deviceIP){
+int getState(String deviceIP){
     HTTPClient http;
     http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
     http.addHeader("Accept-Encoding", "identity");
@@ -37,7 +37,7 @@ int getState(string deviceIP){
 }
 ```
 ```cpp
-void setState(string deviceIP, int state){
+void setState(String deviceIP, int state){
     HTTPClient http;
     http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
     http.addHeader("Content-Type", "text/xml");
@@ -47,12 +47,12 @@ void setState(string deviceIP, int state){
 }
 ```
 ```cpp
-void toggleState(string deviceIP){
+void toggleState(String deviceIP){
     HTTPClient http;
     http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
     http.addHeader("Content-Type", "text/xml");
     http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#SetBinaryState\"");
-    http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?> <s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>" + String(abs(getBinaryState(deviceIP)-1)) +"</BinaryState></u:SetBinaryState></s:Body></s:Envelope>");
+    http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?> <s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>" + String(abs(getState(deviceIP)-1)) +"</BinaryState></u:SetBinaryState></s:Body></s:Envelope>");
     http.end();
 }
 ```
