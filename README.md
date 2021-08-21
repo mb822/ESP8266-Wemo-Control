@@ -62,8 +62,8 @@ void toggleState(string deviceIP){
 
 
 <br/><br/>
-***Sample Use:<br/>
-**&nbsp;&nbsp;&nbsp;&nbsp;[Wireless WeMo Light Switch Remote](https://github.com/mb822/esp8266WemoExample/blob/main/esp8266_wemo_remote.cpp)
+###Sample Use:<br/>
+##&nbsp;&nbsp;&nbsp;&nbsp;[Wireless WeMo Light Switch Remote](https://github.com/mb822/esp8266WemoExample/blob/main/esp8266_wemo_remote.cpp)
 
 
 <div style="display: inline-block">
