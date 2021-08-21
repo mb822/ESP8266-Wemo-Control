@@ -17,7 +17,7 @@
 
 const char* ssid = "ssid";                        //change to your ssid
 const char* password = "password";                //change to your password
-
+String deviceIP = "1.2.3.4";                 //change to your device ip
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);                   //set built in LED pin as output
@@ -38,23 +38,29 @@ void setup() {
   Serial.println("");
   Serial.println("WiFi connected");
 
+  toggleState(deviceIP);
+  digitalWrite(15, LOW);                        //turn relay off (turn esp8266 off)
 }
 
-void loop() {
-  HTTPClient http;
-  //getState
-  http.begin("http://10.0.0.15:49153/upnp/control/basicevent1");          //replace ip with your device's ip
-  http.addHeader("Accept-Encoding", "identity");
-  http.addHeader("Content-Length", "306");
-  http.addHeader("Content-Type", "text/xml");
-  http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#GetBinaryState\"");
-  http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"><s:Body><u:GetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"></u:GetBinaryState></s:Body></s:Envelope>");
-  //invert currect state
-  http.begin("http://10.0.0.15:49153/upnp/control/basicevent1");          //replace ip with your device's ip
-  http.addHeader("Content-Type", "text/xml");
-  http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#SetBinaryState\"");
-  http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?> <s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>" + String(abs(ttp.getString().substring(216,217).toInt()-1)) +"</BinaryState></u:SetBinaryState></s:Body></s:Envelope>");
-  http.end();
+int getState(String deviceIP){
+    HTTPClient http;
+    http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
+    http.addHeader("Accept-Encoding", "identity");
+    http.addHeader("Content-Length", "306");
+    http.addHeader("Content-Type", "text/xml");
+    http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#GetBinaryState\"");
+    http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?><s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"><s:Body><u:GetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"></u:GetBinaryState></s:Body></s:Envelope>");
+    return http.getString().substring(216,217).toInt();
+}
 
-  digitalWrite(15, LOW);                        //turn relay off (turn esp8266 off)
+void toggleState(String deviceIP){
+    HTTPClient http;
+    http.begin("http://" + deviceIP + ":49153/upnp/control/basicevent1");
+    http.addHeader("Content-Type", "text/xml");
+    http.addHeader("SOAPACTION", "\"urn:Belkin:service:basicevent:1#SetBinaryState\"");
+    http.POST("<?xml version=\"1.0\" encoding=\"utf-8\"?> <s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><s:Body><u:SetBinaryState xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>" + String(abs(getState(deviceIP)-1)) +"</BinaryState></u:SetBinaryState></s:Body></s:Envelope>");
+    http.end();
+}
+
+void loop(){
 }
