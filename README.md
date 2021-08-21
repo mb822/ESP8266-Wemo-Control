@@ -66,6 +66,6 @@ Sample Use:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;[Wireless WeMo Light Switch Remote](https://github.com/mb822/esp8266WemoExample/blob/main/esp8266_wemo_remote.cpp)
 
 <div style="display: inline-block">
-  <img width="45%" style="min-width: 400" alt="na" src="https://user-images.githubusercontent.com/70653539/130304906-9a8e7300-9da2-462f-bbe3-63a2fef1d22e.png">
-  <img width="45%" style="min-width: 400" alt="na" src="https://raw.githubusercontent.com/mb822/esp8266WemoExample/main/esp8266_wemo_remote_drawing.png">
+  <img width="45%" style="min-width: 350px" alt="na" src="https://user-images.githubusercontent.com/70653539/130304906-9a8e7300-9da2-462f-bbe3-63a2fef1d22e.png">
+  <img width="45%" style="min-width: 350px" alt="na" src="https://raw.githubusercontent.com/mb822/esp8266WemoExample/main/esp8266_wemo_remote_drawing.png">
 </div>
