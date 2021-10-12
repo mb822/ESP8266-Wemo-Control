@@ -1,4 +1,4 @@
-# Control WEMO Smart Switch with an ESP8266 
+# Control WeMo Smart Switch with an ESP8266 
 
 ## Implementation of [ESP8266HTTPClient](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient) and [ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi) used to get and control the state of your WeMo Smart Light Switch<br/><br/>
 
