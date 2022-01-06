@@ -10,7 +10,7 @@
 //      upon toggle completion, the esp8266 turns the relay off, turning itself off
 
 //since the esp8266 is completely off most of the time, this remote can preform nearly 2000 toggles on a 200 mAh battery (on average)
-//unfortuanly the ESP8266WiFi library is quite slow - which means that reconnecting to WiFi does take a few seconds - about 5 - although this disadvantage comes with the advantage of no standy current draw
+//unfortuanly the ESP8266WiFi library is quite slow - which means that reconnecting to WiFi does take a few seconds - about 5 - although this disadvantage comes with the advantage of 0 standy current draw
 
 //scehamtic provided in github repo 
 
